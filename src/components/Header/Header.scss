@@ -1,0 +1,40 @@
+.Header {
+  display: flex;
+  flex-flow: row wrap;
+
+  background-color: aqua;
+  &-h1 {
+  }
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-ul {
+    display: flex;
+  }
+  &-li {
+  }
+
+  &-button {
+  }
+  &-div {
+  }
+  &-DopDownFeatures-button {
+  }
+  &-DopDownFeatures-ul {
+  }
+  &-DopDownFeatures-li {
+  }
+  &-DopDownFeatures-a {
+  }
+  &-DopDownFeatures-img {
+  }
+  &-dropDownCompany-button {
+  }
+  &-dropDownCompany-ul {
+  }
+  &-dropDownCompany {
+  }
+  &-dropDownCompany-a {
+  }
+}
