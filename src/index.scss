@@ -5,7 +5,7 @@
   --Medium-Gray: hsl(0, 0%, 41%);
   --Almost-Black: hsl(0, 0%, 8%);
   /* Tipografía */
-  --tipo-principal: "Epilogue", sans-serif;
+  --tipo-principal: 'Epilogue', sans-serif;
 }
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
@@ -87,7 +87,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -134,9 +134,14 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
+  background-color: var(--Almost-White);
   color: var(--Almost-Black);
-  // /* (Opcional) */ hyphens: auto;
-  // /* (Opcional) */ font-smooth: always;
-  // /* (Opcional) */ -webkit-font-smoothing: antialiased;
-  // /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
 }

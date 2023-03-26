@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react';
 import { GlobalContext } from '../../Provider/Provider';
+import './Header.scss';
 
 export const Header = () => {
   return (
     <>
       <header className="Header">
         <Logo />
+        <Hamburger />
         <Nav />
       </header>
     </>
@@ -14,10 +16,24 @@ export const Header = () => {
 
 export const Logo = () => {
   const { header } = useContext(GlobalContext);
-  const { text } = header.logo;
+  const { svg, href } = header.logo;
   return (
     <>
-      <h1 className="Header-h1">{text}</h1>
+      <h1 className="Header-h1">
+        <a href={href}>
+          <img src={svg} alt="Logo" />
+        </a>
+      </h1>
+    </>
+  );
+};
+
+export const Hamburger = () => {
+  return (
+    <>
+      <button className="Header-hamburger">
+        <img src="/assets/images/icon-menu.svg" alt="Icon-menu" />
+      </button>
     </>
   );
 };
@@ -33,7 +49,7 @@ export const Nav = () => {
 
 export const Menu = () => {
   const { header } = useContext(GlobalContext);
-  const { careers } = header;
+  const { careers, about } = header;
   return (
     <ul className="Header-ul">
       <li className="Header-li">
@@ -43,8 +59,13 @@ export const Menu = () => {
         <DropDownCompany />
       </li>
       <li className="Header-li">
-        <a href={careers.href} className="Header-button">
+        <a href={careers.href} className="Header-a Header-btnLinks">
           {careers.text}
+        </a>
+      </li>
+      <li className="Header-li">
+        <a href={about.href} className="Header-a Header-btnLinks">
+          {about.text}
         </a>
       </li>
     </ul>
@@ -53,11 +74,22 @@ export const Menu = () => {
 
 export const Registration = () => {
   const { header } = useContext(GlobalContext);
-  const { login, register } = header;
+  const { registration } = header;
   return (
-    <div className="Header-div">
-      <a href={login.href}>{login.text}</a>
-      <a href={register.href}>{register.text}</a>
+    <div className="Header-Registration">
+      {registration.map((item) => (
+        <a
+          key={item.id}
+          href={item.href}
+          className={
+            item.text === 'Login'
+              ? 'Header-btnLinks Header-a--login'
+              : 'Header-btnLinks Header-a--register'
+          }
+        >
+          {item.text}
+        </a>
+      ))}
     </div>
   );
 };
@@ -73,11 +105,27 @@ export const DropDownFeatures = () => {
 
   return (
     <>
-      <button className="Header-DopDownFeatures-button" onClick={handleToggle}>
-        {button.text}
+      <button
+        className="Header-dropDownFeatures-button Header-btnLinks"
+        onClick={handleToggle}
+      >
+        <span>{button.text}</span>
+        {isOpen ? (
+          <img
+            className="Header-arrow"
+            src="/assets/images/icon-arrow-up.svg"
+            alt="arrow-up"
+          />
+        ) : (
+          <img
+            className="Header-arrow"
+            src="/assets/images/icon-arrow-down.svg"
+            alt="arrow-down"
+          />
+        )}
       </button>
       {isOpen && (
-        <ul className="Header-DopDownFeatures-ul">
+        <ul className="Header-dropDownFeatures-ul">
           {list.map((item) => (
             <DropDownFeaturesItem key={item.id} {...item} />
           ))}
@@ -89,9 +137,9 @@ export const DropDownFeatures = () => {
 
 export const DropDownFeaturesItem = ({ href, text, svg }) => {
   return (
-    <li className="Header-DopDownFeatures-li">
-      <a className="Header-DopDownFeatures-a" href={href}>
-        <img className="Header-DopDownFeatures-img" src={svg} alt={text} />
+    <li className="Header-dropDownFeatures-li">
+      <a className="Header-dropDownFeatures-a" href={href}>
+        <img className="Header-dropDownFeatures-img" src={svg} alt={text} />
         {text}
       </a>
     </li>
@@ -109,8 +157,24 @@ export const DropDownCompany = () => {
 
   return (
     <>
-      <button className="Header-dropDownCompany-button" onClick={handleToggle}>
-        {button.text}
+      <button
+        className="Header-dropDownCompany-button Header-btnLinks"
+        onClick={handleToggle}
+      >
+        <span>{button.text}</span>
+        {isOpen ? (
+          <img
+            className="Header-arrow"
+            src="/assets/images/icon-arrow-up.svg"
+            alt="arrow-up"
+          />
+        ) : (
+          <img
+            className="Header-arrow"
+            src="/assets/images/icon-arrow-down.svg"
+            alt="arrow-down"
+          />
+        )}
       </button>
 
       {isOpen && (
@@ -126,7 +190,7 @@ export const DropDownCompany = () => {
 
 export const DropDownCompanyItem = ({ href, text }) => {
   return (
-    <li className="Header-dropDownCompany">
+    <li className="Header-dropDownCompany-li">
       <a href={href} className="Header-dropDownCompany-a">
         {text}
       </a>

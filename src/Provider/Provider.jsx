@@ -5,7 +5,7 @@ export const GlobalContext = createContext();
 
 const data = {
   header: {
-    logo: { id: uuidv4(), text: 'snap', href: '#' },
+    logo: { id: uuidv4(), svg: '/assets/images/logo.svg', href: '#' },
 
     dropDownFeatures: {
       button: { id: uuidv4(), text: 'Features' },
@@ -60,8 +60,10 @@ const data = {
     careers: { id: uuidv4(), text: 'Careers', href: '#' },
     about: { id: uuidv4(), text: 'About', href: '#' },
 
-    login: { id: uuidv4(), text: 'Login', href: '#' },
-    register: { id: uuidv4(), text: 'Register' },
+    registration: [
+      { id: uuidv4(), text: 'Login', href: '#' },
+      { id: uuidv4(), text: 'Register', href: '#' },
+    ],
   },
 
   main: {

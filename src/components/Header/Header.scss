@@ -1,40 +1,114 @@
-.Header {
-  display: flex;
-  flex-flow: row wrap;
+@mixin font-style($weight, $size, $lineHight: 0) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineHight;
+}
 
-  background-color: aqua;
-  &-h1 {
+@mixin flexible($dis, $direction, $corte, $just, $align) {
+  display: $dis;
+  flex-flow: $direction $corte;
+  justify-content: $just;
+  align-items: $align;
+}
+
+.Header {
+  @include flexible(flex, row, wrap, space-between, center);
+  padding: 1.5rem 1rem;
+
+  &-hamburger {
+    display: none;
   }
+
   &-nav {
-    display: flex;
-    justify-content: space-between;
+    @include flexible(flex, row, wrap, space-between, center);
+    width: 89.5%;
+    height: 2.625rem;
   }
   &-ul {
-    display: flex;
-  }
-  &-li {
+    @include flexible(flex, row, nowrap, flex-start, flex-start);
+    gap: 2.5rem;
   }
 
-  &-button {
+  &-btnLinks {
+    @include font-style(500, 0.875rem);
+    line-height: 1rem;
+    color: var(--Medium-Gray);
   }
-  &-div {
+
+  &-btnLinks:hover {
+    color: var(--Almost-Black);
   }
-  &-DopDownFeatures-button {
+
+  &-Registration {
+    @include flexible(flex, row, nowrap, flex-start, center);
+    gap: 2.5rem;
   }
-  &-DopDownFeatures-ul {
+
+  &-a--login:hover {
+    @include font-style(700, 0.875rem);
   }
-  &-DopDownFeatures-li {
+
+  &-a--register {
+    padding: 0.8125rem 1.375rem;
+    border: 1.5px solid var(--Medium-Gray);
+    border-radius: 14px;
   }
-  &-DopDownFeatures-a {
+
+  &-a--register:hover {
+    border-color: var(--Almost-Black);
   }
-  &-DopDownFeatures-img {
+
+  &-arrow {
+    width: 0.5rem;
   }
+
+  &-dropDownFeatures-button,
   &-dropDownCompany-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5625rem;
+    cursor: pointer;
   }
+
+  &-dropDownCompany-a,
+  &-dropDownFeatures-a,
+  &-dropDownFeatures-a {
+    @include font-style(500, 0.875rem, 1rem);
+    color: var(--Medium-Gray);
+  }
+
+  &-dropDownFeatures-ul,
   &-dropDownCompany-ul {
+    position: absolute;
+    margin-top: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
   }
-  &-dropDownCompany {
+
+  &-dropDownFeatures-ul {
+    margin-left: -4.375rem;
+    background-color: #ffffff;
   }
-  &-dropDownCompany-a {
+
+  &-dropDownFeatures-li:nth-child(2),
+  &-dropDownFeatures-li:nth-child(3) {
+    margin: 1rem 0;
+  }
+  &-dropDownFeatures-a {
+    display: flex;
+    gap: 0.9375rem;
+  }
+  &-dropDownFeatures-img {
+    width: 0.875rem;
+    height: 16px;
+  }
+
+  &-dropDownCompany-ul {
+    margin-left: 0.1.5rem;
+  }
+
+  &-dropDownCompany-li:nth-child(2) {
+    margin: 1rem 0;
   }
 }
