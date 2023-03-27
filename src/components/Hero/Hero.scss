@@ -1,0 +1,77 @@
+@import '../../Tools/mixin';
+.Hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(0.625rem, 7.8125rem) 1fr;
+  width: 100%;
+  margin-top: 0.125rem;
+  padding: 2.875rem 8.125rem 7.6312rem 10.3125rem;
+
+  &-article {
+    grid-column: 1/2;
+    width: 33.75rem;
+    margin-top: 6.4375rem;
+  }
+  &-h2 {
+    width: 88%;
+    @include font-style(700, 5rem, 5rem, var(--Almost-Black));
+    letter-spacing: -1.11111px;
+  }
+
+  &-p {
+    margin-top: 3rem;
+    width: 27.8125rem;
+    max-width: 27.8125rem;
+    @include font-style(500, 1.125rem, 1.75rem, var(--Medium-Gray));
+  }
+
+  &-btn {
+    cursor: pointer;
+    margin-top: 3.1875rem;
+    padding: 0.9375rem 1.75rem 0.8125rem 31px;
+    border-radius: 0.9375rem;
+    @include font-style(700, 1.125rem, 1.75rem, var(--Almost-White));
+    background-color: var(--Almost-Black);
+    letter-spacing: -0.25px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &-btn:hover {
+    transition: all 0.3s ease-in;
+    color: var(--Almost-Black);
+    background-color: var(--Almost-White);
+    outline: 1px solid #151515;
+  }
+
+  &-figure {
+    grid-column: 3/4;
+    width: 30rem;
+    height: 40rem;
+  }
+
+  &-client {
+    margin-top: 6.75rem;
+    @include flexible(flex, row, nowrap, flex-start, center);
+    gap: 2.5rem;
+  }
+
+  &-client-databiz {
+    width: 7.0713rem;
+  }
+  &-client-audiophile {
+    width: 4.5625rem;
+  }
+  &-client-meet {
+    width: 5.5819rem;
+  }
+  &-client-maker {
+    width: 5.1256rem;
+  }
+}
+
+@media screen and (max-width: 1338px) {
+  .Hero {
+    padding: 2.6875rem 8.125rem 8.125rem 8.375rem;
+  }
+}
+
+// 1163

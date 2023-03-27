@@ -1,19 +1,8 @@
-@mixin font-style($weight, $size, $lineHight: 0) {
-  font-weight: $weight;
-  font-size: $size;
-  line-height: $lineHight;
-}
-
-@mixin flexible($dis, $direction, $corte, $just, $align) {
-  display: $dis;
-  flex-flow: $direction $corte;
-  justify-content: $just;
-  align-items: $align;
-}
+@import '../../Tools/mixin';
 
 .Header {
   @include flexible(flex, row, wrap, space-between, center);
-  padding: 1.5rem 1rem;
+  padding: 1.3125rem 2.5rem;
 
   &-hamburger {
     display: none;
@@ -30,9 +19,7 @@
   }
 
   &-btnLinks {
-    @include font-style(500, 0.875rem);
-    line-height: 1rem;
-    color: var(--Medium-Gray);
+    @include font-style(500, 0.875rem, 1rem, var(--Medium-Gray));
   }
 
   &-btnLinks:hover {
@@ -45,11 +32,11 @@
   }
 
   &-a--login:hover {
-    @include font-style(700, 0.875rem);
+    @include font-style(700, 0.875rem, 1rem);
   }
 
   &-a--register {
-    padding: 0.8125rem 1.375rem;
+    padding: 0.8125rem 1.375rem 0.8125rem 1.4375rem;
     border: 1.5px solid var(--Medium-Gray);
     border-radius: 14px;
   }
@@ -64,8 +51,7 @@
 
   &-dropDownFeatures-button,
   &-dropDownCompany-button {
-    display: flex;
-    align-items: center;
+    @include flexible(flex, row, nowrap, flex-start, center);
     gap: 0.5625rem;
     cursor: pointer;
   }
@@ -73,8 +59,7 @@
   &-dropDownCompany-a,
   &-dropDownFeatures-a,
   &-dropDownFeatures-a {
-    @include font-style(500, 0.875rem, 1rem);
-    color: var(--Medium-Gray);
+    @include font-style(500, 0.875rem, 1rem, var(--Medium-Gray));
   }
 
   &-dropDownFeatures-ul,
@@ -96,7 +81,7 @@
     margin: 1rem 0;
   }
   &-dropDownFeatures-a {
-    display: flex;
+    @include flexible(flex, row, nowrap, flex-start, flex-start);
     gap: 0.9375rem;
   }
   &-dropDownFeatures-img {

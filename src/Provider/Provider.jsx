@@ -67,12 +67,34 @@ const data = {
   },
 
   main: {
-    h2: { title: 'Make remote work' },
-    text: {
-      text: `Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.`,
+    post: {
+      title: 'Make remote work',
+      text: `Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.`,
+      btn: 'Learn more',
     },
-    btn: { text: 'Learn more' },
+
+    client: [
+      {
+        id: uuidv4(),
+        svg: '/assets/images/client-databiz.svg',
+        alt: 'client-databiz',
+      },
+      {
+        id: uuidv4(),
+        svg: '/assets/images/client-audiophile.svg',
+        alt: 'client-audiophile',
+      },
+      {
+        id: uuidv4(),
+        svg: '/assets/images/client-meet.svg',
+        alt: 'client-meet',
+      },
+      {
+        id: uuidv4(),
+        svg: '/assets/images/client-maker.svg',
+        alt: 'client-maker',
+      },
+    ],
   },
 };
 
