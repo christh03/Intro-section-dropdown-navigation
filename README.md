@@ -16,7 +16,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Live Site URL](https://christhperalta.github.io/Intro-section-dropdown-navigation/)
+- Solution URL: [https://christhperalta.github.io/Intro-section-dropdown-navigation/](https://christhperalta.github.io/Intro-section-dropdown-navigation/)
 
 ## My process
 
