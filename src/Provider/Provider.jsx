@@ -5,7 +5,7 @@ export const GlobalContext = createContext();
 
 const data = {
   header: {
-    logo: { id: uuidv4(), svg: '/assets/images/logo.svg', href: '#' },
+    logo: { id: uuidv4(), svg: 'assets/images/logo.svg', href: '#' },
 
     dropDownFeatures: {
       button: { id: uuidv4(), text: 'Features' },
@@ -14,25 +14,25 @@ const data = {
           id: uuidv4(),
           text: 'Todo List',
           href: '#',
-          svg: '/assets/images/icon-todo.svg',
+          svg: 'assets/images/icon-todo.svg',
         },
         {
           id: uuidv4(),
           text: 'Calendar',
           href: '#',
-          svg: '/assets/images/icon-calendar.svg',
+          svg: 'assets/images/icon-calendar.svg',
         },
         {
           id: uuidv4(),
           text: 'Reminders',
           href: '#',
-          svg: '/assets/images/icon-reminders.svg',
+          svg: 'assets/images/icon-reminders.svg',
         },
         {
           id: uuidv4(),
           text: 'Planning',
           href: '#',
-          svg: '/assets/images/icon-planning.svg',
+          svg: 'assets/images/icon-planning.svg',
         },
       ],
     },
