@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
+      <div className="overlay"></div>
     </div>
   );
 }

@@ -3,12 +3,18 @@ import { GlobalContext } from '../../Provider/Provider';
 import './Header.scss';
 
 export const Header = () => {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const handleToggle = () => {
+    setMenuActive(!menuActive);
+  };
+
   return (
     <>
-      <header className="Header">
+      <header className={`Header  ${menuActive ? 'isActive' : ''}`}>
         <Logo />
-        <Hamburger />
-        <Nav />
+        <Hamburger handleToggle={handleToggle} />
+        <Nav menuActive={menuActive} handleToggle={handleToggle} />
       </header>
     </>
   );
@@ -28,19 +34,30 @@ export const Logo = () => {
   );
 };
 
-export const Hamburger = () => {
+export const Hamburger = ({ handleToggle }) => {
   return (
     <>
-      <button className="Header-hamburger">
+      <button className="Header-hamburger" onClick={handleToggle}>
         <img src="/assets/images/icon-menu.svg" alt="Icon-menu" />
       </button>
     </>
   );
 };
 
-export const Nav = () => {
+export const HamburgerClose = ({ handleToggle }) => {
   return (
-    <nav className="Header-nav">
+    <>
+      <button className={`Header-hamburgerClose`} onClick={handleToggle}>
+        <img src="/assets/images/icon-close-menu.svg" alt="Icon-menu" />
+      </button>
+    </>
+  );
+};
+
+export const Nav = ({ menuActive, handleToggle }) => {
+  return (
+    <nav className={`Header-nav ${menuActive ? 'isActive' : ''}`}>
+      <HamburgerClose handleToggle={handleToggle} />
       <Menu />
       <Registration />
     </nav>
@@ -59,12 +76,12 @@ export const Menu = () => {
         <DropDownCompany />
       </li>
       <li className="Header-li">
-        <a href={careers.href} className="Header-a Header-btnLinks">
+        <a href={careers.href} className="Header-a-careers Header-btnLinks">
           {careers.text}
         </a>
       </li>
       <li className="Header-li">
-        <a href={about.href} className="Header-a Header-btnLinks">
+        <a href={about.href} className="Header-a-about Header-btnLinks">
           {about.text}
         </a>
       </li>
@@ -125,7 +142,9 @@ export const DropDownFeatures = () => {
         )}
       </button>
       {isOpen && (
-        <ul className="Header-dropDownFeatures-ul">
+        <ul
+          className={`Header-dropDownFeatures-ul ${isOpen ? 'transition' : ''}`}
+        >
           {list.map((item) => (
             <DropDownFeaturesItem key={item.id} {...item} />
           ))}

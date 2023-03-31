@@ -1,77 +1,181 @@
 @import '../../Tools/mixin';
-.Hero {
-  display: grid;
-  grid-template-columns: 1fr minmax(0.625rem, 7.8125rem) 1fr;
-  width: 100%;
-  margin-top: 0.125rem;
-  padding: 2.875rem 8.125rem 7.6312rem 10.3125rem;
 
-  &-article {
-    grid-column: 1/2;
-    width: 33.75rem;
-    margin-top: 6.4375rem;
-  }
-  &-h2 {
-    width: 88%;
-    @include font-style(700, 5rem, 5rem, var(--Almost-Black));
-    letter-spacing: -1.11111px;
-  }
-
-  &-p {
-    margin-top: 3rem;
-    width: 27.8125rem;
-    max-width: 27.8125rem;
-    @include font-style(500, 1.125rem, 1.75rem, var(--Medium-Gray));
-  }
-
-  &-btn {
-    cursor: pointer;
-    margin-top: 3.1875rem;
-    padding: 0.9375rem 1.75rem 0.8125rem 31px;
-    border-radius: 0.9375rem;
-    @include font-style(700, 1.125rem, 1.75rem, var(--Almost-White));
-    background-color: var(--Almost-Black);
-    letter-spacing: -0.25px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  &-btn:hover {
-    transition: all 0.3s ease-in;
-    color: var(--Almost-Black);
-    background-color: var(--Almost-White);
-    outline: 1px solid #151515;
-  }
-
-  &-figure {
-    grid-column: 3/4;
-    width: 30rem;
-    height: 40rem;
-  }
-
-  &-client {
-    margin-top: 6.75rem;
-    @include flexible(flex, row, nowrap, flex-start, center);
-    gap: 2.5rem;
-  }
-
-  &-client-databiz {
-    width: 7.0713rem;
-  }
-  &-client-audiophile {
-    width: 4.5625rem;
-  }
-  &-client-meet {
-    width: 5.5819rem;
-  }
-  &-client-maker {
-    width: 5.1256rem;
-  }
-}
-
-@media screen and (max-width: 1338px) {
+@media screen and (max-width: 60rem) {
   .Hero {
-    padding: 2.6875rem 8.125rem 8.125rem 8.375rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding-bottom: 5.875rem;
+    overflow: hidden;
+  }
+
+  .Hero-figure {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    margin-bottom: 3rem;
+  }
+
+  .Hero-article {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    max-width: 21.4375rem;
+    margin: auto;
+  }
+
+  .Hero-h2 {
+    @include font-style(700, 2.25rem, 2.625rem, var(--Almost-Black));
+    letter-spacing: -0.0313rem;
+    text-align: center;
+  }
+
+  .Hero-p {
+    @include font-style(500, 1rem, 1.625rem, var(--Medium-Gray));
+    text-align: center;
+    margin: 1rem auto 1.5rem auto;
+  }
+
+  .Hero-btn {
+    width: 8.5rem;
+    max-width: 8.5rem;
+    min-height: 3rem;
+    margin: auto;
+    border-radius: 0.9375rem;
+    background-color: var(--Almost-Black);
+    color: var(--Almost-White);
+  }
+
+  .Hero-client {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.7813rem;
+    margin-top: 3rem;
+  }
+
+  .Hero-client-databiz {
+    max-width: 5.0781rem;
+  }
+  .Hero-client-audiophile {
+    max-width: 3.3044rem;
+  }
+  .Hero-client-meet {
+    max-width: 4.0088rem;
+  }
+  .Hero-client-maker {
+    max-width: 3.6812rem;
   }
 }
 
-// 1163
+@media screen and (min-width: 30rem) and (max-width: 60rem) {
+  .Hero-article {
+    max-width: 85vw;
+  }
+
+  .Hero-h2 {
+    @include font-style(700, 6.8vw, 12vw, var(--Almost-Black));
+    letter-spacing: -0.0313rem;
+    text-align: center;
+  }
+
+  .Hero-p {
+    @include font-style(500, 3vw, 4.5vw, var(--Medium-Gray));
+    text-align: center;
+    margin: 1rem auto 1.5rem auto;
+  }
+
+  .Hero-client-databiz {
+    max-width: 6.0781rem;
+  }
+  .Hero-client-audiophile {
+    max-width: 4.3044rem;
+  }
+  .Hero-client-meet {
+    max-width: 5.0088rem;
+  }
+  .Hero-client-maker {
+    max-width: 4.6812rem;
+  }
+}
+
+@mixin desktop($media) {
+  @media screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@media screen and (min-width: 60.0625rem) {
+  .Hero {
+    display: grid;
+    grid-template-columns: repeat(17, 1fr);
+    grid-template-rows: auto;
+    padding: 2.875rem 0 8.125rem 0;
+
+    &-figure {
+      grid-column: 12/16;
+      width: 30rem;
+      max-width: 30rem;
+      min-height: 40rem;
+    }
+
+    &-article {
+      grid-column: 3/11;
+      width: 33.75rem;
+      max-width: 33.75rem;
+      margin-top: 6.5rem;
+      padding-left: 17px;
+      @include desktop(1145px) {
+        width: 30rem;
+      }
+    }
+
+    &-h2 {
+      @include font-style(700, 5rem, 5rem, var(--Almost-Black));
+      letter-spacing: -1.11111px;
+      margin-bottom: 3rem;
+      @include desktop(1145px) {
+        font-size: 4.4rem;
+      }
+    }
+
+    &-p {
+      @include font-style(500, 1.125rem, 1.75rem, var(--Medium-Gray));
+      width: 27.8125rem;
+      margin-bottom: 3.1875rem;
+    }
+
+    &-btn {
+      width: 10.1875rem;
+      max-width: 10.1875rem;
+      min-height: 3.5rem;
+      margin-bottom: 6.75rem;
+      border-radius: 0.9375rem;
+      @include font-style(700, 1.125rem, 1.75rem, var(--Medium-Gray));
+
+      background-color: var(--Almost-Black);
+      color: var(--Almost-White);
+    }
+
+    &-client {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 1.7813rem;
+      margin-top: 3rem;
+    }
+
+    &-client-databiz {
+      max-width: 7.0713rem;
+    }
+    &-client-audiophile {
+      max-width: 4.5625rem;
+    }
+    &-client-meet {
+      max-width: 5.5819rem;
+    }
+    &-client-maker {
+      max-width: 5.1256rem;
+    }
+  }
+}
