@@ -108,19 +108,21 @@
 @media screen and (min-width: 60.0625rem) {
   .Hero {
     display: grid;
-    grid-template-columns: repeat(17, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    padding: 2.875rem 0 8.125rem 0;
+    width: 96%;
+    margin: 2.875rem auto 8.125rem auto;
+    // padding: 2.875rem 0 8.125rem 0;
 
     &-figure {
-      grid-column: 12/16;
+      grid-column: 8/12;
       width: 30rem;
       max-width: 30rem;
       min-height: 40rem;
     }
 
     &-article {
-      grid-column: 3/11;
+      grid-column: 2/7;
       width: 33.75rem;
       max-width: 33.75rem;
       margin-top: 6.5rem;
