@@ -12,7 +12,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/Screenshot.png)
+![](./public/design/christhperalta.github.io_Intro-section-dropdown-navigation_.png)
 
 ### Links
 
