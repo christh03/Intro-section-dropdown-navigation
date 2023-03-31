@@ -7,64 +7,64 @@
     grid-template-rows: auto;
     padding-bottom: 5.875rem;
     overflow: hidden;
-  }
 
-  .Hero-figure {
-    width: 100%;
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    margin-bottom: 3rem;
-  }
+    &-figure {
+      width: 100%;
+      grid-column: 1/-1;
+      grid-row: 1/2;
+      margin-bottom: 3rem;
+    }
 
-  .Hero-article {
-    grid-column: 1/-1;
-    grid-row: 2/3;
-    max-width: 21.4375rem;
-    margin: auto;
-  }
+    &-article {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+      max-width: 21.4375rem;
+      margin: auto;
+    }
 
-  .Hero-h2 {
-    @include font-style(700, 2.25rem, 2.625rem, var(--Almost-Black));
-    letter-spacing: -0.0313rem;
-    text-align: center;
-  }
+    &-h2 {
+      @include font-style(700, 2.25rem, 2.625rem, var(--Almost-Black));
+      letter-spacing: -0.0313rem;
+      text-align: center;
+    }
 
-  .Hero-p {
-    @include font-style(500, 1rem, 1.625rem, var(--Medium-Gray));
-    text-align: center;
-    margin: 1rem auto 1.5rem auto;
-  }
+    &-p {
+      @include font-style(500, 1rem, 1.625rem, var(--Medium-Gray));
+      text-align: center;
+      margin: 1rem auto 1.5rem auto;
+    }
 
-  .Hero-btn {
-    width: 8.5rem;
-    max-width: 8.5rem;
-    min-height: 3rem;
-    margin: auto;
-    border-radius: 0.9375rem;
-    background-color: var(--Almost-Black);
-    color: var(--Almost-White);
-  }
+    &-btn {
+      width: 8.5rem;
+      max-width: 8.5rem;
+      min-height: 3rem;
+      margin: auto;
+      border-radius: 0.9375rem;
+      background-color: var(--Almost-Black);
+      color: var(--Almost-White);
+    }
 
-  .Hero-client {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.7813rem;
-    margin-top: 3rem;
-  }
+    &-client {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.7813rem;
+      margin-top: 3rem;
+    }
 
-  .Hero-client-databiz {
-    max-width: 5.0781rem;
-  }
-  .Hero-client-audiophile {
-    max-width: 3.3044rem;
-  }
-  .Hero-client-meet {
-    max-width: 4.0088rem;
-  }
-  .Hero-client-maker {
-    max-width: 3.6812rem;
+    &-client-databiz {
+      max-width: 5.0781rem;
+    }
+    &-client-audiophile {
+      max-width: 3.3044rem;
+    }
+    &-client-meet {
+      max-width: 4.0088rem;
+    }
+    &-client-maker {
+      max-width: 3.6812rem;
+    }
   }
 }
 
@@ -158,9 +158,7 @@
     }
 
     &-client {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
+      @include flexible(flex, row, nowrap, flex-start, center);
       gap: 1.7813rem;
       margin-top: 3rem;
     }
