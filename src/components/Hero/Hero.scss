@@ -146,15 +146,23 @@
     }
 
     &-btn {
+      cursor: pointer;
       width: 10.1875rem;
       max-width: 10.1875rem;
       min-height: 3.5rem;
       margin-bottom: 6.75rem;
       border-radius: 0.9375rem;
       @include font-style(700, 1.125rem, 1.75rem, var(--Medium-Gray));
-
       background-color: var(--Almost-Black);
       color: var(--Almost-White);
+      transition: all 0.4s ease-in-out;
+    }
+
+    &-btn:hover {
+      border: 1px solid var(--Almost-Black);
+      background-color: var(--Almost-White);
+      transition: all 0.3s ease-in-out;
+      color: var(--Almost-Black);
     }
 
     &-client {
