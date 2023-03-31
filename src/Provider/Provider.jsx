@@ -76,22 +76,22 @@ const data = {
     client: [
       {
         id: uuidv4(),
-        svg: '/assets/images/client-databiz.svg',
+        svg: 'assets/images/client-databiz.svg',
         alt: 'client-databiz',
       },
       {
         id: uuidv4(),
-        svg: '/assets/images/client-audiophile.svg',
+        svg: 'assets/images/client-audiophile.svg',
         alt: 'client-audiophile',
       },
       {
         id: uuidv4(),
-        svg: '/assets/images/client-meet.svg',
+        svg: 'assets/images/client-meet.svg',
         alt: 'client-meet',
       },
       {
         id: uuidv4(),
-        svg: '/assets/images/client-maker.svg',
+        svg: 'assets/images/client-maker.svg',
         alt: 'client-maker',
       },
     ],

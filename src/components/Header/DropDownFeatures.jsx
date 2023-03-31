@@ -18,13 +18,13 @@ export const DropDownFeatures = () => {
         {isOpen ? (
           <img
             className="Header-arrow"
-            src="/assets/images/icon-arrow-up.svg"
+            src="assets/images/icon-arrow-up.svg"
             alt="arrow-up"
           />
         ) : (
           <img
             className="Header-arrow"
-            src="/assets/images/icon-arrow-down.svg"
+            src="assets/images/icon-arrow-down.svg"
             alt="arrow-down"
           />
         )}
